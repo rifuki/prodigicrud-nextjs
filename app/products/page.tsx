@@ -17,8 +17,9 @@ export default function Products() {
     }
 
     function renderProductList() {
-        return data?.map(product => (
+        return data?.map((product, index) => (
             <tr key={product.id_product}>
+                <td className="px-4 py-2 border">{index+1}</td>
                 <td className="px-4 py-2 border">{product.id_product}</td>
                 <td className="px-4 py-2 border">{product.name}</td>
                 <td className="px-4 py-2 border">{product.qty}</td>
@@ -49,6 +50,7 @@ export default function Products() {
                 <table className="min-w-full table-auto border border-collapse">
                     <thead className="bg-gray-700">
                         <tr>
+                            <th scope="col" className="border border-gray-300 px-4 py-2 tracking-wider">No</th>
                             <th scope="col" className="border border-gray-300 px-4 py-2 tracking-wider">ID</th>
                             <th scope="col" className="border border-gray-300 px-4 py-2 tracking-wider">Name</th>
                             <th scope="col" className="border border-gray-300 px-4 py-2 tracking-wider">Qty</th>
